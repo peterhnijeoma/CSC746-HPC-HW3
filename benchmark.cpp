@@ -18,7 +18,7 @@
 #include <cblas.h>
 #include <string.h>
 
-// external definitions for mmul's
+// external definitions for vmmul's
 extern void my_dgemv(int, double*, double*, double *);
 extern const char* dgemv_desc;
 
@@ -86,7 +86,7 @@ int main(int argc, char** argv)
         fill(X, n );
         fill(Y, n );
 
-        // make copies of A, B, C for use in verification of results
+        // make copies of A, X, Y for use in verification of results
         memcpy((void *)Acopy, (const void *)A, sizeof(double)*n*n);
         memcpy((void *)Xcopy, (const void *)X, sizeof(double)*n);
         memcpy((void *)Ycopy, (const void *)Y, sizeof(double)*n);
