@@ -28,7 +28,7 @@ void my_dgemv(int n, double* A, double* x, double* y)
    // nthreads and thread_id so as to not taint your timings
 
    #pragma omp parallel for
-   for (int i = 0; i < n; i += n) // iterate for n rows
+   for (int i = 0; i < n * n; i += n) // iterate for n rows
    {
       //#pragma omp parallel for reduction (+:y)
       for (int j = 0; j < n; j++)

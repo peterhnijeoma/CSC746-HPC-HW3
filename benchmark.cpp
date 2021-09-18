@@ -82,14 +82,21 @@ int main(int argc, char** argv)
     {
         printf("Working on problem size N=%d \n", n);
 
+        printf("filling vectors \n");
+
         fill(A, n * n);
         fill(X, n );
         fill(Y, n );
+
+        printf("doen filling vectors \n");
+        printf("mem copying of vectors and matrix\n");
 
         // make copies of A, X, Y for use in verification of results
         memcpy((void *)Acopy, (const void *)A, sizeof(double)*n*n);
         memcpy((void *)Xcopy, (const void *)X, sizeof(double)*n);
         memcpy((void *)Ycopy, (const void *)Y, sizeof(double)*n);
+
+        printf("mem copy of vectors and matrix is done \n");
 
         // insert start timer code here
         std::chrono::time_point<std::chrono::high_resolution_clock> start_time = std::chrono::high_resolution_clock::now();

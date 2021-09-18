@@ -11,6 +11,7 @@ double cvalue;
 
 void my_dgemv(int n, double* A, double* x, double* y)
 {
+   printf("vector matrix multiply is starting \n");
    // insert your code here: implementation of basic matrix multiply
    for (int i = 0; i < n*n; i += n) // iterate for n rows
    {
@@ -21,4 +22,5 @@ void my_dgemv(int n, double* A, double* x, double* y)
       }
       y[i] += cvalue;
    }
+   printf("vector matrix multiply is done \n");
 }
