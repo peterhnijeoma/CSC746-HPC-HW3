@@ -6,6 +6,8 @@
  * On exit, A and X maintain their input values.
  */
 
+#include <iostream>
+
 const char* dgemv_desc = "Basic implementation of matrix-vector multiply.";
 double cvalue;
 
