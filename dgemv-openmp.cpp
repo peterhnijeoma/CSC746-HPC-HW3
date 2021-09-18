@@ -30,7 +30,7 @@ void my_dgemv(int n, double* A, double* x, double* y)
    #pragma omp parallel for
    for (int i = 0; i < n; i++) // iterate for n rows
    {
-      #pragma omp parallel for reduction (+:y)
+      #pragma omp parallel for reduction (+:y[i])
       for (int j = 0; j < n; j++)
       {
          y[i] += A[i*n + j] * x[j];   // A is in row major
